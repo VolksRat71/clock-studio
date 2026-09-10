@@ -1,0 +1,84 @@
+{
+  "schema": "cloc-studio/v1",
+  "title": "KERV Studio",
+  "rootLabel": "kerv-studio",
+  "generatedAt": "2026-09-10T19:47:00.000Z",
+  "source": "example",
+  "clocVersion": "2.10",
+  "elapsedSeconds": 1.74,
+  "options": {
+    "preset": "original",
+    "languages": [
+      "TypeScript",
+      "JavaScript",
+      "CSS",
+      "HTML",
+      "Python",
+      "Bourne Shell"
+    ],
+    "excludeDirs": [
+      "node_modules",
+      ".git",
+      "dist",
+      "build",
+      "coverage",
+      ".next"
+    ],
+    "excludeFiles": []
+  },
+  "command": "",
+  "warnings": [
+    "Example counts transcribed from the supplied cloc screenshot. No live repository scan was performed."
+  ],
+  "rows": [
+    {
+      "language": "TypeScript",
+      "files": 344,
+      "blank": 4483,
+      "comment": 10903,
+      "code": 38808
+    },
+    {
+      "language": "JavaScript",
+      "files": 183,
+      "blank": 4038,
+      "comment": 8577,
+      "code": 23356
+    },
+    {
+      "language": "Bourne Shell",
+      "files": 10,
+      "blank": 185,
+      "comment": 582,
+      "code": 1158
+    },
+    {
+      "language": "CSS",
+      "files": 1,
+      "blank": 66,
+      "comment": 46,
+      "code": 294
+    },
+    {
+      "language": "HTML",
+      "files": 5,
+      "blank": 0,
+      "comment": 0,
+      "code": 268
+    },
+    {
+      "language": "Python",
+      "files": 2,
+      "blank": 43,
+      "comment": 95,
+      "code": 196
+    }
+  ],
+  "totals": {
+    "files": 545,
+    "blank": 8815,
+    "comment": 20203,
+    "code": 64080
+  },
+  "files": []
+}

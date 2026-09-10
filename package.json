@@ -1,0 +1,13 @@
+{
+  "name": "cloc-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local cloc GUI and CLI with deterministic SVG and browser PNG exports.",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node cli.mjs ui",
+    "test": "node --test",
+    "demo": "node cli.mjs render --from examples/kerv-studio.json --out example.svg"
+  }
+}

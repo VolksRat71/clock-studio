@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>cloc / studio</title><link rel="stylesheet" href="/app.css"><script type="module" src="/app.mjs"></script></head>
+<body>
+<header class="topbar"><div class="brand"><span class="brand-icon">&gt;_</span><strong>cloc <span>/ studio</span></strong><span class="tag">LOCAL REPORT BUILDER</span></div><span id="cloc-status" class="status-pill">Checking cloc...</span></header>
+<div class="layout">
+<aside>
+  <div class="eyebrow">SCAN CONFIGURATION</div><h1>Count. Inspect.<br>Make it presentable.</h1><p class="muted intro">A source report you can actually share. Your repository stays on this machine.</p>
+  <form id="scan-form">
+    <label for="root">Project directory</label><input id="root" placeholder="~/Desktop/projects/my-project" autocomplete="off" required><p class="hint">Paste a local path. No upload or folder copying.</p>
+    <label for="title">Report title</label><input id="title" maxlength="120" placeholder="My project">
+    <label for="preset">Counting preset</label><select id="preset"></select>
+    <label for="languages">Included languages</label><textarea id="languages" rows="3" spellcheck="false"></textarea><p class="hint">Comma-separated cloc names. Empty = all recognized languages.</p>
+    <label for="exclude-dirs">Excluded directories</label><textarea id="exclude-dirs" rows="3" spellcheck="false"></textarea><p class="hint">Basenames at any depth, not paths.</p>
+    <label for="exclude-files">Excluded filenames</label><textarea id="exclude-files" rows="2" placeholder="package-lock.json,*.min.js,*.map" spellcheck="false"></textarea><p class="hint">Comma-separated basenames. Supports * and ?.</p>
+    <button class="primary" id="scan-button" type="submit">Scan directory <span>&rarr;</span></button>
+  </form>
+  <div class="side-actions"><button id="demo" type="button">Load example</button><button id="import" type="button">Import JSON</button><input type="file" id="import-file" accept=".json,application/json" hidden></div>
+  <div class="note"><strong>Scope matters.</strong> Tests are counted unless you exclude them. Filters remove specified paths; they cannot prove that all generated or vendored code is gone.</div>
+</aside>
+<main>
+  <section class="preview-head"><div><div class="eyebrow">REPORT PREVIEW</div><h2>Ready for the screenshot.</h2></div><div class="export-actions"><label class="sr-only" for="scale">PNG scale</label><select id="scale"><option value="1">PNG 1x</option><option value="2" selected>PNG 2x</option><option value="3">PNG 3x</option></select><button id="svg-export">SVG</button><button id="json-export">JSON</button><button id="png-export" class="primary">Export PNG</button></div></section>
+  <div id="message" role="status" aria-live="polite">Loading example preview...</div>
+  <div class="preview-wrap"><img id="preview" alt="Codebase report preview"></div>
+  <div class="preview-caption"><span>Same SVG template powers the preview and exports.</span><span id="dimensions"></span></div>
+  <section class="inspector"><div class="inspector-head"><div><div class="eyebrow">WHAT IS BEING COUNTED?</div><h2>Largest source files</h2></div><div class="file-controls"><label class="sr-only" for="file-language">Filter file language</label><select id="file-language"><option value="">All languages</option></select><label class="sr-only" for="file-search">Search file paths</label><input id="file-search" placeholder="Filter paths..."></div></div><p id="file-note" class="muted"></p><div class="table-wrap"><table><thead><tr><th>File</th><th>Language</th><th>Code</th><th>Comments</th><th>Blank</th></tr></thead><tbody id="file-rows"></tbody></table></div></section>
+  <details class="command"><summary>Exact scan command and diagnostics</summary><pre id="command-text"></pre><pre id="warnings"></pre></details>
+  <footer>Local Node server + cloc. No account, telemetry, CDN, or runtime npm dependencies.</footer>
+</main></div>
+</body></html>
